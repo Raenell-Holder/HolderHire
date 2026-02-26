@@ -144,6 +144,11 @@ section {
   font-size: 18px;
 }
 
+h2{
+  font-size: 2em;
+  padding-bottom: 20px;
+}
+
 .hero {
   text-align: center;
   background: linear-gradient(-45deg, #eef2ff, #dbeafe, #ffffff, #e0f2fe);
