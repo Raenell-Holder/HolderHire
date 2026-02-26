@@ -1,60 +1,35 @@
-/* =========================================
-   HolderHire Global JavaScript
-   ========================================= */
-
-// Wait until DOM is fully loaded
 document.addEventListener("DOMContentLoaded", function () {
 
-  /* ===============================
-     Navbar Shrink on Scroll
-     =============================== */
+  /* Navbar shrink */
   const navbar = document.querySelector(".navbar");
-
   window.addEventListener("scroll", function () {
     if (navbar) {
-      navbar.classList.toggle("scrolled", window.scrollY > 50);
+      navbar.classList.toggle("scrolled", window.scrollY > 40);
     }
   });
 
-  /* ===============================
-     Scroll Reveal Animation
-     =============================== */
+  /* Scroll reveal */
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("show");
       }
     });
-  }, {
-    threshold: 0.15
-  });
+  }, { threshold: 0.2 });
 
   document.querySelectorAll(".animate").forEach(el => {
     observer.observe(el);
   });
 
-  /* ===============================
-     Animated Counter
-     =============================== */
-  const counters = document.querySelectorAll(".counter");
+  /* Subtle hero scroll effect */
+  const hero = document.querySelector(".hero");
 
-  counters.forEach(counter => {
-    const target = +counter.getAttribute("data-target");
-    let current = 0;
-
-    const updateCounter = () => {
-      const increment = target / 200;
-
-      if (current < target) {
-        current += increment;
-        counter.innerText = Math.ceil(current);
-        requestAnimationFrame(updateCounter);
-      } else {
-        counter.innerText = target;
-      }
-    };
-
-    updateCounter();
+  window.addEventListener("scroll", () => {
+    const scroll = window.scrollY;
+    if (hero) {
+      hero.style.transform = `scale(${1 - scroll * 0.0002})`;
+      hero.style.opacity = `${1 - scroll * 0.0007}`;
+    }
   });
 
 });
