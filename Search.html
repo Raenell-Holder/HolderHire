@@ -1,47 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>HolderHire | Find Jobs Your Way</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>HolderHire | Personalized Job Search</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-<a href="#main" class="skip-link">Skip to main content</a>
-
-<header class="navbar">
+  <header class="navbar">
     <div class="container nav-container">
-        <a href="index.html" class="brand">
-            <img src="logo.png" alt="HolderHire logo" class="logo">
-            <span class="brand-name">HolderHire</span>
-        </a>
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="HolderHire logo" class="logo">
+        <span class="brand-name">HolderHire</span>
+      </a>
 
-        <nav>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="Search.html">Browse Jobs</a></li>
-            </ul>
-        </nav>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Search.html">Start Searching</a></li>
+           <li><a href="tutorials.html">Tutorials</a></li>
+        </ul>
+      </nav>
     </div>
-</header>
-<main id="main">
-    <h1>hello world</h1>
-</main>
-<footer>
-    <div class="container footer-content">
-        <p>&copy; 2026 HolderHire. All rights reserved.</p>
-        <div class="footer-links">
-            <a href="#">Privacy</a>
-            <a href="#">Terms</a>
-            <a href="#">Contact</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-content">
+        <h1>Find Jobs That Fit Your Needs</h1>
+        <p class="hero-subtext">
+          Answer a few questions so HolderHire can suggest jobs that match your needs, language comfort, and daily realities.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>Personalized Job Search</h2>
+
+        <form id="jobSearchForm" class="job-form">
+          <label for="jobType">What type of job are you looking for?</label>
+          <input type="text" id="jobType" name="jobType" placeholder="Warehouse, retail, IT support, childcare..." required>
+
+          <label for="location">City or ZIP code</label>
+          <input type="text" id="location" name="location" placeholder="Albany, NY or 12203" required>
+
+          <label for="distance">Maximum travel distance</label>
+          <select id="distance" name="distance">
+            <option value="5 miles">Within 5 miles</option>
+            <option value="10 miles">Within 10 miles</option>
+            <option value="25 miles">Within 25 miles</option>
+            <option value="remote only">Remote only</option>
+          </select>
+
+          <label for="englishLevel">English proficiency</label>
+          <select id="englishLevel" name="englishLevel">
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+          </select>
+
+          <label for="preferredLanguage">Preferred language for results</label>
+          <select id="preferredLanguage" name="preferredLanguage">
+            <option value="English">English</option>
+            <option value="Arabic">Arabic</option>
+            <option value="Amharic">Amharic</option>
+            <option value="Somali">Somali</option>
+            <option value="Swahili">Swahili</option>
+            <option value="Tigrinya">Tigrinya</option>
+            <option value="Yoruba">Yoruba</option>
+            <option value="Igbo">Igbo</option>
+            <option value="Hausa">Hausa</option>
+            <option value="French">French</option>
+            <option value="Portuguese">Portuguese</option>
+            <option value="Dari">Dari</option>
+            <option value="Pashto">Pashto</option>
+            <option value="Farsi">Farsi</option>
+            <option value="Kurdish">Kurdish</option>
+            <option value="Turkish">Turkish</option>
+            <option value="Hebrew">Hebrew</option>
+          </select>
+
+          <label for="workType">Preferred work type</label>
+          <select id="workType" name="workType">
+            <option value="in-person">In-person</option>
+            <option value="hybrid">Hybrid</option>
+            <option value="remote">Remote</option>
+            <option value="no preference">No preference</option>
+          </select>
+
+          <label for="experience">Previous experience</label>
+          <input type="text" id="experience" name="experience" placeholder="Food service, customer service, office work...">
+
+          <label for="transportation">Transportation access</label>
+          <select id="transportation" name="transportation">
+            <option value="has car">Has car</option>
+            <option value="public transit only">Public transit only</option>
+            <option value="needs nearby jobs">Needs nearby jobs</option>
+          </select>
+
+          <label for="schedule">Preferred schedule</label>
+          <select id="schedule" name="schedule">
+            <option value="day shift">Day shift</option>
+            <option value="evening shift">Evening shift</option>
+            <option value="night shift">Night shift</option>
+            <option value="weekends">Weekends</option>
+            <option value="flexible">Flexible</option>
+          </select>
+
+          <label for="additionalNeeds">Anything else we should consider?</label>
+          <textarea id="additionalNeeds" name="additionalNeeds" rows="5" placeholder="No degree required, simple applications, bilingual workplace preferred..."></textarea>
+
+          <button type="submit" class="btn-primary btn-large">Find Jobs</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="resultsSection">
+      <div class="container">
+        <div class="results-header">
+          <h2>Recommended Jobs</h2>
+          <button id="viewSavedJobsBtn" class="btn-secondary" type="button">View Saved Jobs</button>
         </div>
+
+        <div id="results">
+          <div class="step">
+            <p>Your personalized results will appear here after you submit the form.</p>
+          </div>
+        </div>
+
+        <div id="savedJobsSection" class="saved-jobs-section hidden">
+          <h2>Saved Jobs</h2>
+          <div id="savedJobs"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <p>&copy; 2026 HolderHire. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </div>
     </div>
-</footer>
-<script src="script.js" defer></script>
+  </footer>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
